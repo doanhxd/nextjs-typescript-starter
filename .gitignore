@@ -1,9 +1,29 @@
 node_modules
+# dependencies
 server/dist
 server/node_modules
-server/.env
+server/.pnp
+server/.pnp.js
+
+# testing
+server/coverage
+
+# next.js
+server/.next/
+server/out/
+
+# misc
+.DS_Store
+server/.DS_Store
+server/*.pem
 
 # debug
 server/npm-debug.log*
 server/yarn-debug.log*
 server/yarn-error.log*
+
+# local env files
+server/.env
+server/.env.development.local
+server/.env.test.local
+server/.env.production.local
