@@ -16,7 +16,7 @@ export class UserResolver {
       return {
         code: 400,
         success: false,
-        //...validateRegisterInput,
+        ...validateRegisterInputErrors,
       };
 
     try {

@@ -4,7 +4,7 @@ export const validateRegisterInput = (registerInput: RegisterInput) => {
   if (!registerInput.email.includes("@"))
     return {
       message: "Invalid email",
-      errors: [{ field: "email", mesage: "Email must include @ symbol" }],
+      errors: [{ field: "email", message: "Email must include @ symbol" }],
     };
 
   if (registerInput.username.length <= 2)
