@@ -24,7 +24,12 @@ export const validateRegisterInput = (registerInput: RegisterInput) => {
   if (registerInput.password.length <= 6)
     return {
       message: "Invalid password",
-      errors: [{ field: "password", message: "Length must me greater than 6" }],
+      errors: [
+        {
+          field: "password",
+          message: "Password length must me greater than 6",
+        },
+      ],
     };
 
   return null;

@@ -12,6 +12,7 @@ import {
   Context,
 } from "apollo-server-core";
 import { UserResolver } from "./resolvers/user";
+import mongoose from "mongoose";
 
 const main = async () => {
   await createConnection({
@@ -25,6 +26,13 @@ const main = async () => {
   });
 
   const app = express();
+
+  // Session/Cookies store
+  await mongoose.connect(
+    `mongodb+srv://${process.env.SESSION_DB_USERNAME_DEV_PROD}:${process.env.SESSION_DB_PASSWORD_DEV_PROD}@nextjs-types.atcfd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+  );
+
+  console.log("MongoDB connected!");
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
